@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="mainDiv" *ngIf="product">
+        <div class="image p-3">
+            <img src={{product.thumbnail}} alt="phoneImage">
+        </div>
+        <div class="detail p-3">
+            <table>
+                <tr>
+                    <th colspan="2">Product Detail</th>
+                </tr>
+                <tr>
+                    <td>Product Name</td>
+                    <td>{{product.title}}</td>
+                </tr>
+                <tr>
+                    <td>Brand Name</td>
+                    <td>{{product.brand}}</td>
+                </tr>
+                <tr>
+                    <td>Product Price</td>
+                    <td>${{product.price | number:'1.0-3'}}</td>
+                </tr>
+                <tr>
+                    <td>Discount</td>
+                    <td>{{product.discountPercentage | number:'1.0-3'}}%</td>
+                </tr>
+                <tr>
+                    <td>Sale Price</td>
+                    <td>${{product.price-((product.price*product.discountPercentage)/100) | number:'1.0-3'}}</td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>{{product.rating}}⭐</td>
+                </tr>
+                <tr>
+                    <td>Stock</td>
+                    <td *ngIf="product.stock > 0; else elseBlock">Available</td>
+                    <ng-template #elseBlock>Out of Stock</ng-template>
+                </tr>
+
+            </table>
+            <br />
+            <button type="button" class="btn btn-primary m-3 mx-auto" (click)="addToCart(product)">Add to Cart</button>
+
+        </div>
+    </div>
+
+</div>

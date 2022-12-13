@@ -1,0 +1,37 @@
+<div class="login">
+    <div class="card w-25">
+        <h1 class="m-auto p-3">LogIn</h1>
+        <div class="p-3">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <div class="FormLabel d-flex justify-content-start">
+                        <label class="ms-0 mb-2" for="Email">
+                            Email:
+                        </label>
+                    </div>
+                    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
+                        placeholder="Enter email" name="email" formControlName="email" />
+                </div>
+                <div class="form-group mt-2">
+                    <div class="FormLabel d-flex justify-content-start">
+                        <label class="ms-0 mb-2" for="Password">
+                            Password:
+                        </label>
+                    </div>
+                    <input type="password" class="form-control" id="Password" placeholder="Password" name="password"
+                        formControlName='password' />
+                </div>
+                <div class="form-group mt-4">
+                    <input type="submit" class="form-control btn btn-primary" value="Login" />
+                </div>
+                <div class="mt-4">
+                    <div class="text-center">
+                        <a class="small" href="#">
+                            Forgot password?
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

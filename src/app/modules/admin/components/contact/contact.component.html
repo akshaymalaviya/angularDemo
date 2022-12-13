@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="heading text-center w-100">
+        <h1>Contact Us</h1>
+    </div>
+    <div class="form p-4 rounded shadow w-100 mx-auto mt-5">
+        <form (ngSubmit)="onSubmitForm(myForm)" #myForm="ngForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address<span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    name="email" placeholder="Enter email" ngModel required email #email="ngModel">
+                <small class="text-danger" *ngIf="!email.valid && email.touched">Please enter valid email</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputUsername1">Username<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="exampleInputUsername1" name="username" ngModel
+                    [(ngModel)]="userName" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Inputs<span class="text-danger">*</span></label>
+                <textarea type="text" class="form-control" id="exampleFormControlTextarea1" name="inputs" ngModel
+                    #textInputs="ngModel" required></textarea>
+                <small class="text-danger" *ngIf="!textInputs.valid && textInputs.touched">Please enter the text</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

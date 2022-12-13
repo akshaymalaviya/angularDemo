@@ -1,0 +1,29 @@
+.card-text {
+  color: rgb(96, 96, 96);
+}
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(0, 154, 0);
+}
+.actualPrice {
+  font-size: 15px;
+  font-weight: 500;
+  color: gray;
+}
+.card:hover {
+  box-shadow: 0px 5px 10px gray;
+}
+.card {
+  min-width: 18rem;
+  margin: 10px;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap !important;
+}
+
+.card-img-top {
+  height: 200px;
+}

@@ -1,0 +1,17 @@
+<div class="product d-flex m-3">
+    <div class="card" style="width: 18rem;" *ngFor="let product of productList">
+        <img class="card-img-top" src={{product.thumbnail}} alt="Card image cap">
+        <div class="card-body">
+            <div class="cardTitle">
+                <h5 class="card-title">{{product.title}}</h5>
+                <span class="price">${{product.price-product.discountPercentage | number:'1.0-3'}}
+                    <span class="actualPrice">
+                        <del>${{product.price | number:'1.0-3'}}</del>
+                    </span>
+                </span>
+            </div>
+            <p class="card-text">{{product.description}}</p>
+            <a [routerLink]="['/dashboard/products', product.id]" class="btn btn-primary btn-sm">Check Out</a>
+        </div>
+    </div>
+</div>

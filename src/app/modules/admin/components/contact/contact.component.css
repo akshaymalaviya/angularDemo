@@ -1,0 +1,21 @@
+.form {
+  max-width: 50%;
+  background-color: aliceblue;
+}
+@media (max-width: 765px) {
+  .form {
+    max-width: 90%;
+  }
+}
+.form-group {
+  margin-bottom: 10px;
+}
+input,
+textarea {
+  margin-top: 5px;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid rgba(255, 0, 0, 0.301);
+  box-shadow: 0px 0px 5px rgba(255, 0, 0, 0.301) inset;
+}

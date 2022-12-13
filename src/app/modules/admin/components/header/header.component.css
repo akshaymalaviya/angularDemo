@@ -1,0 +1,20 @@
+.active {
+  font-weight: 700;
+  color: black;
+  margin: 0px;
+}
+.button button {
+  color: white !important;
+}
+.nav-item {
+  margin-right: 3px;
+}
+.username a {
+  font-size: 19px;
+  margin-top: 0px;
+  padding-top: 4px;
+  color: darkblue;
+}
+.arrow {
+  padding-top: 2px;
+}

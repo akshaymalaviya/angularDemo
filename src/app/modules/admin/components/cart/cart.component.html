@@ -1,0 +1,35 @@
+<div class="container">
+    <h1 class="text-center">My Cart</h1>
+    <br />
+    <div class="cartList" *ngIf="cartList.length!=0; else elseBlock">
+        <div class="card mb-3" style="max-width: 740px;" *ngFor="let item of cartList">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src={{item.thumbnail}} class="card-img" alt="PhoneImage">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.title}}</h5>
+                        <p class="card-text" class="price">${{item.price-item.discountPercentage | number:'1.0-3'}}
+                            <del class="actualPrice">${{item.price | number:'1.0-3'}}</del>
+                        </p>
+                        <p class="card-text">{{item.rating}}⭐</p>
+                        <p class="card-text disc">{{item.description}}</p>
+                        <p class="card-text d-flex">
+                            <button class="btn btn-success btn-sm me-2" title="Remove item form the Cart"
+                                [routerLink]="['/dashboard/products', item.id]">Check out</button>
+                            <button class="btn btn-danger btn-sm me-2" title="Remove item form the Cart"
+                                (click)="removeItem(item)">Remove</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock>
+        <div class="cartList mt-4 text-center">
+            <h3>Your cart is empty!!</h3>
+            <button class="btn btn-primary mt-3" routerLink="/dashboard/home">Go to Home</button>
+        </div>
+    </ng-template>
+</div>
